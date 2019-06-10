@@ -12,15 +12,18 @@ router.get("/test", ctx => {
 });
 
 export const errorHandler = ctx => {
-  let error = { status: "error" };
-  switch (ctx.status) {
-    case 404:
-      error.message = "route not found";
-      ctx.body = { ...error };
-      break;
-    case 504:
-      error.message = "method not found";
-      ctx.body = { ...error };
-      break;
+  if (ctx.status !== 200) {
+    let error = { status: "error" };
+    switch (ctx.status) {
+      case 404:
+        error.message = "route not found";
+        break;
+      case 504:
+        error.message = "method not found";
+        break;
+      default:
+        error.message = "server error";
+    }
+    ctx.body = { ...error };
   }
 };
