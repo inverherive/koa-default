@@ -1,6 +1,6 @@
-const Router = require("koa-router");
+import Router from "koa-router";
 
-const router = new Router();
+export const router = new Router();
 
 router.get("/test", ctx => {
   console.log("Test GET");
@@ -11,7 +11,7 @@ router.get("/test", ctx => {
   };
 });
 
-const errorHandler = ctx => {
+export const errorHandler = ctx => {
   let error = { status: "error" };
   switch (ctx.status) {
     case 404:
@@ -24,5 +24,3 @@ const errorHandler = ctx => {
       break;
   }
 };
-
-module.exports = { router, errorHandler };
