@@ -16,7 +16,14 @@
     "prettier": "^1.18.2"
   },
   "scripts": {
-    "dev": "babel-watch src/index.js",
-    "build": "babel src --out-dir dist --copy-files"
-  }
+    "run:dev": "babel-watch src/index.js",
+    "build": "babel src --out-dir dist --copy-files",
+    "run:prod": "babel src --out-dir dist --copy-files && node dist/index.js"
+  },
+  "name": "koa-default",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/inverherive/koa-default.git",
+  "author": "Ian Marett <ian.marett@inverherive.co.uk>",
+  "license": "MIT"
 }
