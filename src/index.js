@@ -1,7 +1,7 @@
+import { PORT } from "dotenv";
 import Koa from "koa";
 import { router, errorHandler } from "./routes/index";
 const app = new Koa();
-const PORT = 1337;
 
 app
   .use(router.routes())

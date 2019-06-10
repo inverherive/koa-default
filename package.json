@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "babel-plugin-dotenv": "^0.1.1",
     "koa": "^2.7.0",
     "koa-body-parser": "^1.1.2",
     "koa-bodyparser": "^4.2.1",
