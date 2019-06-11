@@ -1,14 +1,22 @@
 import Router from "koa-router";
-
+import { createImage } from "../controllers/map_image.js";
 export const router = new Router();
 
 router.get("/test", ctx => {
-  console.log("Test GET");
   ctx.status = 200;
   ctx.body = {
     status: "success",
     message: "Test Complete"
   };
+});
+router.get("/mapImage/:left/:bottom/:right/:top", ctx => {
+  ctx.type = "image/png";
+  ctx.body = createImage(ctx.params);
+});
+
+router.post("/mapImage", ctx => {
+  ctx.type = "image/png";
+  ctx.body = createImage(ctx.request.body.extent);
 });
 
 export const errorHandler = ctx => {

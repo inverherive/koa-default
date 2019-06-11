@@ -2,9 +2,14 @@
   "dependencies": {
     "babel-plugin-dotenv": "^0.1.1",
     "koa": "^2.7.0",
-    "koa-body-parser": "^1.1.2",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "gm": "^1.23.1",
+    "gm-base64": "^1.1.1",
+    "pdfmake": "^0.1.37",
+    "dateformat": "^3.0.3",
+    "polylabel": "^1.0.2",
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

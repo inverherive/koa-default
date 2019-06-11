@@ -1,9 +1,11 @@
 import { PORT } from "dotenv";
 import Koa from "koa";
+import bodyParser from "koa-bodyparser";
 import { router, errorHandler } from "./routes/index";
 const app = new Koa();
 
 app
+  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods())
   .use(errorHandler);
